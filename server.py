@@ -8,7 +8,8 @@ async def handle_client(reader, writer):
         if message == '':
             break
 
-        print(f"Получено сообщение: {message}")
+        print(f"Полученно сообщение: {message.lower()}")
+        print(f"Полученное сообщение в нижнем и верхнем регистре:\n1) {message.lower()}\n 2){message.upper()}")
     
     writer.close()
 

@@ -1,12 +1,12 @@
 import asyncio
 
 async def send_messages():
-    reader, writer = await asyncio.open_connection('127.0.0.1', 8888)
+    reader, writer = await asyncio.open_connection('192.168.1.107', 8888)
 
     try:
         while True:
-            message = "Hello, Server!"
-            print(f'Sending: {message}')
+            message = input()
+            print(f'Отправленно сообщение: {message}')
             writer.write(message.encode())
             await writer.drain()  # Убедитесь, что сообщение отправлено
 
